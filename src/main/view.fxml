@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+         prefWidth="571.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+    <tabs>
+        <Tab text="Show all">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="tableView" layoutY="6.0" prefHeight="364.0" prefWidth="571.0">
+                            <columns>
+                                <TableColumn fx:id="colID" prefWidth="75.0" text="Personal ID"/>
+                                <TableColumn fx:id="colName" prefWidth="113.0" text="Name"/>
+                                <TableColumn fx:id="colSurname" prefWidth="94.0" text="Surname"/>
+                                <TableColumn fx:id="colAge" prefWidth="69.0" text="Age"/>
+                                <TableColumn fx:id="colMajor" prefWidth="126.0" text="Studies major"/>
+                                <TableColumn fx:id="colSem" minWidth="7.0" prefWidth="67.0" text="Semester"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Add new student">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="173.0" layoutY="22.0" text="Adding new student. Please fill in all fields!"/>
+                        <VBox alignment="TOP_CENTER" layoutX="164.0" layoutY="47.0" prefHeight="220.0"
+                              prefWidth="209.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" text="Personal ID"/>
+                                <TextField fx:id="idField" prefHeight="25.0" prefWidth="89.0">
+                                    <opaqueInsets>
+                                        <Insets bottom="5.0"/>
+                                    </opaqueInsets>
+                                </TextField>
+                                <Label text="Name">
+                                    <padding>
+                                        <Insets bottom="5.0"/>
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="nameField"/>
+                                <Label text="Surname"/>
+                                <TextField fx:id="surnameField"/>
+                                <Label text="Age"/>
+                                <TextField fx:id="ageField"/>
+                                <Label text="Studies major"/>
+                                <ChoiceBox fx:id="majorBox" prefWidth="150.0"/>
+                                <Label text="Semester"/>
+                                <ChoiceBox fx:id="semBox" prefHeight="25.0" prefWidth="86.0"/>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0"/>
+                            </padding>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Button fx:id="addButton" layoutX="229.0" layoutY="320.0" mnemonicParsing="false"
+                                onAction="#addNewStud" text="Click to add"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
